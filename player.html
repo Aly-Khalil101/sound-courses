@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Studio One Fundamentals, lesson player</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<header class="top"><a class="logo" href="index.html"><span class="dot"></span>Latino</a><div class="t">Studio One Fundamentals</div>
+<div class="pr"><span id="pt">0 of 8 complete</span><div class="fader"><i id="pf"></i></div></div></header>
+<div class="pwrap"><div>
+<div class="stage"><canvas id="cv"></canvas><video id="vid" controls hidden></video><button class="play" id="play" aria-label="Play">▶</button><span class="ph mono" id="ph"></span></div>
+<div class="info"><h1 id="lt"></h1><p id="ld" style="color:#c3cad6"></p>
+<div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-t="o">Overview</button><button role="tab" aria-selected="false" data-t="n">Notes</button><button role="tab" aria-selected="false" data-t="r">Resources</button></div>
+<div class="tab on" id="t-o"><p style="color:#c3cad6">Follow along in Studio One while you watch. Pause often and try each step yourself.</p></div>
+<div class="tab" id="t-n"><textarea id="note" placeholder="Write your notes for this lesson. They save automatically on this device."></textarea></div>
+<div class="tab" id="t-r"><ul class="plain"><li>Project files for this lesson (add your download link)</li><li>Shortcut cheat sheet (add your download link)</li></ul></div>
+<div class="acts"><button class="btn" id="done"></button><button class="btn ghost" id="next">Next lesson</button></div></div></div>
+<aside class="side"><h3>Course content</h3><div id="list"></div></aside></div>
+<script src="js/main.js"></script><script src="js/player.js"></script></body></html>

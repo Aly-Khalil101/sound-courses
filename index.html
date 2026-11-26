@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Studio One Fundamentals by Latino</title>
+
+    <meta
+      name="description"
+      content="Video course: learn recording, editing, mixing and exporting in Studio One. 8 lessons by Latino."
+    />
+    <meta name="theme-color" content="#101216" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Latino Academy" />
+    <meta
+      property="og:title"
+      content="Studio One Fundamentals | Video course by Latino"
+    />
+    <meta
+      property="og:description"
+      content="8 video lessons: go from an empty session to a finished, mixed song in Studio One."
+    />
+    <meta property="og:url" content="https://YOUR-DOMAIN.com/" />
+    <meta property="og:image" content="https://YOUR-DOMAIN.com/images/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Studio One Fundamentals",
+        "description": "Learn recording, editing, mixing and exporting in Studio One in 8 video lessons.",
+        "provider": { "@type": "Person", "name": "Latino" },
+        "inLanguage": "en"
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="logo" href="index.html"
+        ><span class="dot"></span>Latino<b>Academy</b></a
+      >
+      <nav>
+        <a href="#content">Curriculum</a><a href="#instructor">Instructor</a
+        ><a href="#faq">FAQ</a
+        ><a class="btn sm" href="player.html">Start learning</a>
+      </nav>
+    </header>
+    <main class="wrap">
+      <div>
+        <div class="hero">
+          <p class="crumb">Music production &gt; Audio engineering</p>
+          <h1>Studio One Fundamentals</h1>
+          <p class="sub">
+            Go from an empty session to a finished, mixed song. Learn recording,
+            editing, mixing and exporting in Studio One, step by step.
+          </p>
+          <div class="meta">
+            <span>Created by <b>Latino</b></span
+            ><span>8 video lessons</span><span>0h 38m total</span
+            ><span>Beginner friendly</span>
+          </div>
+        </div>
+        <section>
+          <h2>What you'll learn</h2>
+          <ul class="learn">
+            <li>Navigate Studio One with confidence</li>
+            <li>Set up your audio interface correctly</li>
+            <li>Record clean, well-leveled takes</li>
+            <li>Edit audio and MIDI quickly</li>
+            <li>Balance a mix with faders, pan and EQ</li>
+            <li>Use compression and reverb with purpose</li>
+            <li>Export and master your song</li>
+            <li>Build a workflow you can reuse</li>
+          </ul>
+        </section>
+        <section id="content">
+          <h2>Course content</h2>
+          <p style="color: var(--mu); margin: -8px 0 14px" id="cs"></p>
+          <div class="acc" id="curr"></div>
+        </section>
+        <section>
+          <h2>Requirements</h2>
+          <ul class="plain">
+            <li>A computer that runs Studio One (Windows or macOS)</li>
+            <li>Headphones or studio monitors</li>
+            <li>No audio experience needed</li>
+          </ul>
+        </section>
+        <section id="instructor">
+          <h2>Your instructor</h2>
+          <div class="inst">
+            <div class="av">L</div>
+            <div>
+              <h3>Latino</h3>
+              <p>
+                Audio engineer and music producer. Write a short bio here: years
+                of experience, notable projects and why he teaches Studio One.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="faq" class="faq">
+          <h2>Questions</h2>
+          <details>
+            <summary>Do I need to know music theory?</summary>
+            <p>
+              No. The course starts from zero and teaches what you need as you
+              go.
+            </p>
+          </details>
+          <details>
+            <summary>Which Studio One version do I need?</summary>
+            <p>Replace with the exact version used in the videos.</p>
+          </details>
+          <details>
+            <summary>How long do I have access?</summary>
+            <p>Replace with the access terms the instructor chooses.</p>
+          </details>
+        </section>
+      </div>
+      <aside class="card">
+        <canvas id="pv" aria-label="Animated audio waveform"></canvas>
+        <div class="in">
+          <div class="price">$9.99</div>
+          <a class="btn" id="go" href="player.html">Enroll now</a
+          ><a class="btn ghost" href="player.html">Preview lesson 1</a>
+          <ul>
+            <li>8 on-demand video lessons</li>
+            <li>Learn at your own pace</li>
+            <li>Track your progress</li>
+            <li>Works on phone and desktop</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+    <script src="js/main.js"></script>
+    <script>
+      const st = load();
+      document.getElementById("curr").innerHTML = LESSONS.map(
+        (l) =>
+          `<details><summary><span class="mono">${String(l.id).padStart(2, "0")}</span><span>${l.t}</span><span class="mono">${l.d}</span></summary><p>${l.s}</p></details>`,
+      ).join("");
+      document.getElementById("cs").textContent =
+        `${LESSONS.length} lessons, 0h 38m`;
+      if (st.done.length) {
+        document.getElementById("go").textContent =
+          `Continue (${st.done.length}/8 done)`;
+      }
+      wave(document.getElementById("pv"));
+    </script>
+  </body>
+</html>
